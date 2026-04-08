@@ -105,7 +105,7 @@ body {
   position: relative;
   transform-style: preserve-3d;
   height: 0;
-  padding-bottom: 110%; /* maintains aspect ratio */
+  padding-bottom: 165%; /* Increased to fit stacked mobile content, square days, AND hero section */
 }
 
 @media (min-width: 768px) {
@@ -113,6 +113,7 @@ body {
     padding-bottom: 75%; 
   }
 }
+
 
 /* Page styles - UPDATED FOR VERTICAL FLIP */
 .calendar-page-container {
@@ -194,12 +195,20 @@ body {
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 45%;
+  height: 35%;
+  flex-shrink: 0;
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
 }
+
+@media (min-width: 768px) {
+  .hero-section {
+    height: 45%;
+  }
+}
+
 
 .hero-image {
   position: absolute;
@@ -232,25 +241,63 @@ body {
 .month-title {
   position: relative;
   z-index: 2;
-  padding: 20px 40px;
+  padding: 10px 20px;
   color: white;
   margin-left: auto;
   text-align: right;
   text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
 }
 
+@media (min-width: 480px) {
+  .month-title {
+    padding: 15px 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .month-title {
+    padding: 20px 40px;
+  }
+}
+
 .month-year {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 2px;
-  margin-bottom: -5px;
+  margin-bottom: -2px;
+}
+
+@media (min-width: 480px) {
+  .month-year {
+    font-size: 1.25rem;
+    margin-bottom: -4px;
+  }
+}
+
+@media (min-width: 768px) {
+  .month-year {
+    font-size: 1.5rem;
+    margin-bottom: -5px;
+  }
 }
 
 .month-name {
-  font-size: 3rem;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+@media (min-width: 480px) {
+  .month-name {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .month-name {
+    font-size: 3rem;
+  }
 }
 
 /* Bottom Content Area */
